@@ -20,6 +20,8 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 
+
+
 let g:pymode_python = 'python3'
 
 " -- Affichage
@@ -28,7 +30,7 @@ set ruler       "affice la position du curseur
 set wrap        "affiches lignes trop longues sur plusieurs lignes
 set scrolloff=3 "Affiche 3 ligne mini autour du curseur
 set nu
-
+set relativenumber
 "-- Recherche
 set ignorecase
 set smartcase   "Reactive cass si maj dans recherche
