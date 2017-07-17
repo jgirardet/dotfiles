@@ -6,17 +6,19 @@ call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'wombat256.vim'
+Plugin 'xoria256.vim'
+Plugin 'tomtom/tcomment_vim'
 "Plugin 'python-mode/python-mode'
 "Plugin 'ervandew/supertab'
 "Plugin 'LustyExplorer'
 "Plugin 'jnurmine/Zenburn'
 "Plugin 'Solarized'
 "Plugin 'scrooloose/nerdtree'
-"Plugin 'ctrlpvim/ctrlp.vim'
-"Plugin 'powerline/powerline'
-"Plugin 'vim-airline/vim-airline'
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
-"
+Plugin 'davidhalter/jedi-vim'
+Plugin 'vim-syntastic/syntastic'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -47,6 +49,11 @@ set wrap        "affiches lignes trop longues sur plusieurs lignes
 set scrolloff=3 "Affiche 3 ligne mini autour du curseur
 set nu
 set relativenumber
+set tw=79
+set nowrap
+set fo-=t
+set colorcolumn=80
+highlight ColorColumn ctermbg=233
 "-- Recherche
 set ignorecase
 set smartcase   "Reactive cass si maj dans recherche
@@ -66,6 +73,18 @@ set hidden
 "active la coloration syntaxique
 syntax enable
 set encoding=utf-8
+" Real programmers don't use TABs but spaces
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set shiftround
+set expandtab
+
+" Disable stupid backup and swap files - they trigger too many events
+" for file system watchers
+set nobackup
+set nowritebackup
+set noswapfile
 
 " show whitespace
 " MUST be inserted BEFORE the colorscheme command
@@ -74,12 +93,7 @@ au InsertLeave * match ExtraWhitespace /\s\+$/
 
 
 "Utilise la version sombre ou clar de solarized
-if has('gui_running')
-	set background=dark
-	colorscheme solarized
-else
-	colorscheme zenburn
-endif
+colorscheme wombat256mod
 
 
 "eesactive le pavé directionnel
@@ -122,6 +136,42 @@ vnoremap > >gv  " better indentation
 
 let g:airline#extensions#tabline#enabled = 1
 
+"parametrage ctrlp
+let g:ctrlp_max_height = 30
+set wildignore+=*.pyc
+set wildignore+=*_build/*
+set wildignore+=*/coverage/*
+
+"Better navigating through omnicomplete option list
+set completeopt=longest,menuone
+function! OmniPopup(action)
+    if pumvisible()
+        if a:action == 'j'
+            return "\<C-N>"
+        elseif a:action == 'k'
+            return "\<C-P>"
+        endif
+    endif
+    return a:action
+endfunction
+
+inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
+inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
+
+" jedi config
+let g:jedi#usages_command = "<leader>z"
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 0
+map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 
+"syntasticconfig
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['pyflakes', 'python']
