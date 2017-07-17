@@ -14,11 +14,15 @@ Plugin 'tomtom/tcomment_vim'
 "Plugin 'jnurmine/Zenburn'
 "Plugin 'Solarized'
 "Plugin 'scrooloose/nerdtree'
+Plugin 'rstacruz/sparkup'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'tell-k/vim-autopep8'
+Plugin 'tpope/vim-surround'
+Plugin 'mjbrownie/vim-htmldjango_omnicomplete'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
@@ -117,8 +121,8 @@ noremap <Leader>E :qa!<CR>   " Quit all windows
 
 "moover entre les buffers"
 " easier moving between tabs
-map <Leader>n <esc>:tabprevious<CR>
-map <Leader>; <esc>:tabnext<CR>
+map <Leader>n <esc>:bprevious<CR>
+map <Leader>; <esc>:bNext<CR>
 
 " bind Ctrl+<movement> keys to move around the windows, instead of using
 " Ctrl+w + <movement>
@@ -175,3 +179,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['pyflakes', 'python']
+
+"autopep8 config
+
+"fjango html complete
+au FileType htmldjango set omnifunc=htmldjangocomplete#CompleteDjango
+au FileType htmldjango inoremap {% {%  %}<left><left><left>
+au FileType htmldjango inoremap {{ {{ }}<left><left><left>
