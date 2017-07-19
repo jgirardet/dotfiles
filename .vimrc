@@ -115,7 +115,7 @@ imap ;; <Esc>
 
 let mapleader = ","
 " Quick quit command
-noremap <Leader>e :quit<CR>  " Quit current window
+noremap <Ctrl>e :quit<CR>  " Quit current window
 noremap <Leader>E :qa!<CR>   " Quit all windows
 
 
