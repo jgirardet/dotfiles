@@ -10,3 +10,5 @@ call plug#end()
 
 let g:deoplete#enable_at_startup = 1
 let g:SuperTabDefaultCompletionType = "<c-n>"
+
+https://git.framasoft.org/iGormilhit/neovim/blob/master/init.vim
