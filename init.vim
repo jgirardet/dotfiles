@@ -17,6 +17,8 @@ Plug 'tell-k/vim-autopep8'
 Plug 'tpope/vim-surround'
 Plug 'wellle/targets.vim'
 Plug 'rstacruz/sparkup'
+
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 
@@ -35,7 +37,7 @@ let mapleader = ";"
 " Bind nohl
 " " Removes highlight of your last search
 " " ``<C>`` stands for ``CTRL`` and therefore ``<C-n>`` stands for ``CTRL+n``
-" noremap <C-n> :nohl<CR>
+noremap <C-n> :nohl<CR>
 " vnoremap <C-n> :nohl<CR>
 " inoremap <C-n> :nohl<CR>
 
@@ -45,7 +47,7 @@ vnoremap <Esc> <Esc>:update<CR>
 inoremap <Esc> <Esc>:update<CR>
 
 "assgne Tab à Ctrl N pour supertab
-let g:SuperTabDefaultCompletionType = "<c-n>"
+" let g:SuperTabDefaultCompletionType = "<c-n>"
 
 "raccourci pour commenter vim-commentary
 noremap <F2> :Commentary<CR>
@@ -70,7 +72,7 @@ noremap <c-x> :quit<CR>  " Quit current window
 map <Leader>, <esc>:bprevious<CR>
 map <Leader>: <esc>:bNext<CR>
 map <Leader>! <esc>:bdelete<CR>
-
+map <Leader>p <esc>:CtrlPBuffer<CR>
 " bind Ctrl+<movement> keys to move around the windows, instead of using
 " Ctrl+w + <movement>
 " Every unnecessary keystroke that can be saved is good for your health :)
