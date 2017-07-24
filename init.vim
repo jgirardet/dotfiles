@@ -89,8 +89,11 @@ map <c-h> <c-w>h
 vnoremap < <gv  " better indentation
 vnoremap > >gv  " better indentation
 
+"remplacer en collant
+:map <Leader>p ciw<C-r>0<ESC>
+
 " Mouse and backspace
-set mouse=a  " on OSX press ALT and click
+set mouse=a  " on OSX prenbackspace ALT and click
 set bs=2     " make backspace behave like normal again
 
 " -- Affichage
