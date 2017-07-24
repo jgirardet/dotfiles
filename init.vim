@@ -2,7 +2,9 @@ colorscheme darkblue
 
 call plug#begin()
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi', {'for': ['python']}
+" Plug 'zchee/deoplete-jedi', {'for': ['python']}
+"Plug 'zchee/deoplete-jedi'
+Plug 'davidhalter/jedi-vim'
 Plug 'ervandew/supertab'
 Plug 'Raimondi/delimitMate'
 Plug 'https://github.com/tpope/vim-fugitive.git'
@@ -11,6 +13,13 @@ Plug 'nono/github_vim_theme'
 Plug 'mhartington/oceanic-next'
 Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
+Plug 'tell-k/vim-autopep8'
+Plug 'tpope/vim-surround'
+Plug 'wellle/targets.vim'
+Plug 'rstacruz/sparkup'
+
+Plug 'morhetz/gruvbox'
+>>>>>>> 284e608e9c61329b5aa35cd3cc5eb34d94cbb618
 call plug#end()
 
 
@@ -24,14 +33,14 @@ autocmd! bufwritepost init.vim source %
 " Gloable key binding
 "
 " MAP LEADER
-let mapleader = ","
+let mapleader = ";"
 
 " Bind nohl
 " " Removes highlight of your last search
 " " ``<C>`` stands for ``CTRL`` and therefore ``<C-n>`` stands for ``CTRL+n``
 noremap <C-n> :nohl<CR>
-vnoremap <C-n> :nohl<CR>
-inoremap <C-n> :nohl<CR>
+" vnoremap <C-n> :nohl<CR>
+" inoremap <C-n> :nohl<CR>
 
 " Quicksave command
 noremap <Esc> <Esc>:update<CR>
@@ -39,7 +48,7 @@ vnoremap <Esc> <Esc>:update<CR>
 inoremap <Esc> <Esc>:update<CR>
 
 "assgne Tab à Ctrl N pour supertab
-let g:SuperTabDefaultCompletionType = "<c-n>"
+" let g:SuperTabDefaultCompletionType = "<c-n>"
 
 "raccourci pour commenter vim-commentary
 noremap <F2> :Commentary<CR>
@@ -62,9 +71,12 @@ imap ;; <Esc>
 noremap <c-x> :bd<CR>  " Quit current window
 noremap <c-X> :quit<CR>  " Quit current window
 " easier moving between buffers
-map <Leader>n <esc>:bprevious<CR>
 
-
+map <Leader>, <esc>:bprevious<CR>
+map <Leader>: <esc>:bNext<CR>
+map <Leader>! <esc>:bdelete<CR>
+map <Leader>p <esc>:CtrlPBuffer<CR>
+>>>>>>> 284e608e9c61329b5aa35cd3cc5eb34d94cbb618
 " bind Ctrl+<movement> keys to move around the windows, instead of using
 " Ctrl+w + <movement>
 " Every unnecessary keystroke that can be saved is good for your health :)
@@ -138,8 +150,18 @@ colorscheme OceanicNext
 "active deoplete au demarrage
 let g:deoplete#enable_at_startup = 1
 
+<<<<<<< HEAD
 "parametre airline tab
 
+=======
+" jedi config
+let g:jedi#usages_command = "<leader>z"
+let g:jedi#popup_on_dot = 0
+let g:jedi#popup_select_first = 0
+map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
+
+"airline
+>>>>>>> 284e608e9c61329b5aa35cd3cc5eb34d94cbb618
 let g:airline#extensions#tabline#enabled = 1
 "https://git.framasoft.org/iGormilhit/neovim/blob/master/init.vim
 
