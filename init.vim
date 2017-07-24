@@ -26,9 +26,13 @@ call plug#end()
 "reload apres sav vimrc
 autocmd! bufwritepost init.vim source %
 "
-
 " Gloable key binding
-"
+"""""" REMAPER touche menu en échape """""""""
+"  
+"xmodmap -e 'keycode 135 = Escape'
+"https://www.jwz.org/xkeycaps/
+
+
 " MAP LEADER
 let mapleader = ";"
 
