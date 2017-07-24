@@ -19,7 +19,6 @@ Plug 'wellle/targets.vim'
 Plug 'rstacruz/sparkup'
 
 Plug 'morhetz/gruvbox'
->>>>>>> 284e608e9c61329b5aa35cd3cc5eb34d94cbb618
 call plug#end()
 
 
@@ -71,12 +70,10 @@ imap ;; <Esc>
 noremap <c-x> :bd<CR>  " Quit current window
 noremap <c-X> :quit<CR>  " Quit current window
 " easier moving between buffers
-
 map <Leader>, <esc>:bprevious<CR>
 map <Leader>: <esc>:bNext<CR>
 map <Leader>! <esc>:bdelete<CR>
 map <Leader>p <esc>:CtrlPBuffer<CR>
->>>>>>> 284e608e9c61329b5aa35cd3cc5eb34d94cbb618
 " bind Ctrl+<movement> keys to move around the windows, instead of using
 " Ctrl+w + <movement>
 " Every unnecessary keystroke that can be saved is good for your health :)
@@ -150,10 +147,8 @@ colorscheme OceanicNext
 "active deoplete au demarrage
 let g:deoplete#enable_at_startup = 1
 
-<<<<<<< HEAD
 "parametre airline tab
 
-=======
 " jedi config
 let g:jedi#usages_command = "<leader>z"
 let g:jedi#popup_on_dot = 0
@@ -161,7 +156,6 @@ let g:jedi#popup_select_first = 0
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 "airline
->>>>>>> 284e608e9c61329b5aa35cd3cc5eb34d94cbb618
 let g:airline#extensions#tabline#enabled = 1
 "https://git.framasoft.org/iGormilhit/neovim/blob/master/init.vim
 
