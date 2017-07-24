@@ -1,5 +1,3 @@
-colorscheme darkblue
-
 call plug#begin()
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'zchee/deoplete-jedi', {'for': ['python']}
