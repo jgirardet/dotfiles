@@ -10,6 +10,7 @@ Plug 'ctrlpvim/ctrlp.vim'
 Plug 'nono/github_vim_theme'
 Plug 'mhartington/oceanic-next'
 Plug 'tpope/vim-commentary'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 
@@ -58,10 +59,10 @@ imap ;; <Esc>
 
 
 "quit
-noremap <c-x> :quit<CR>  " Quit current window
+noremap <c-x> :bd<CR>  " Quit current window
+noremap <c-X> :quit<CR>  " Quit current window
 " easier moving between buffers
 map <Leader>n <esc>:bprevious<CR>
-map <Leader>; <esc>:bNext<CR>
 
 
 " bind Ctrl+<movement> keys to move around the windows, instead of using
@@ -137,4 +138,31 @@ colorscheme OceanicNext
 "active deoplete au demarrage
 let g:deoplete#enable_at_startup = 1
 
+"parametre airline tab
+
+let g:airline#extensions#tabline#enabled = 1
 "https://git.framasoft.org/iGormilhit/neovim/blob/master/init.vim
+
+"parametrage ctrlp
+let g:ctrlp_max_height = 30
+set wildignore+=*.pyc
+set wildignore+=*_build/*
+set wildignore+=*/coverage/*
+
+"Better navigating through omnicomplete option list
+set completeopt=longest,menuone
+function! OmniPopup(action)
+    if pumvisible()
+        if a:action == 'j'
+            return "\<C-N>"
+        elseif a:action == 'k'
+            return "\<C-P>"
+        endif
+    endif
+    return a:action
+endfunction
+
+inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
+inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
+
+
