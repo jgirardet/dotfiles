@@ -32,12 +32,11 @@ autocmd! bufwritepost init.vim source %
 "xmodmap -e 'keycode 135 = Escape'
 "https://www.jwz.org/xkeycaps/
 
-
 " MAP LEADER
 let mapleader = ";"
 
 " Bind nohl
-" " Removes highlight of your last search
+" " Remoes highlight of your last search
 " " ``<C>`` stands for ``CTRL`` and therefore ``<C-n>`` stands for ``CTRL+n``
 noremap <C-n> :nohl<CR>
 " vnoremap <C-n> :nohl<CR>
@@ -63,15 +62,15 @@ map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
-map ;; <Esc>
+" map ù <Esc>
 imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
-imap ;; <Esc>
-
-
-"quit
+" imap ù <Esc>
+map! ù <Esc> 
+" imap  ^$ ù
+"qui  t
 noremap <c-x> :bd<CR>  " Quit current window
 noremap <c-X> :quit<CR>  " Quit current window
 " easier moving between buffers
