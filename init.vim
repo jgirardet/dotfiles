@@ -1,22 +1,23 @@
 call plug#begin()
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 " Plug 'zchee/deoplete-jedi', {'for': ['python']}
-"Plug 'zchee/deoplete-jedi'
 Plug 'davidhalter/jedi-vim'
-Plug 'ervandew/supertab'
+" Plug 'ervandew/supertab'
 Plug 'Raimondi/delimitMate'
 Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'ctrlpvim/ctrlp.vim'
-Plug 'nono/github_vim_theme'
+Plug 'flazz/vim-colorschemes'
 Plug 'mhartington/oceanic-next'
 Plug 'tpope/vim-commentary'
 Plug 'vim-airline/vim-airline'
-Plug 'tell-k/vim-autopep8'
 Plug 'tpope/vim-surround'
 Plug 'wellle/targets.vim'
 Plug 'rstacruz/sparkup'
-
 Plug 'morhetz/gruvbox'
+Plug 'w0rp/ale'
+" Plug 'vim-scripts/python.vim--Vasiliev'
+Plug 'tmhedberg/SimpylFold'
+ " Plug 'vim-scripts/vim-python-virtualenv' " a tester
 call plug#end()
 
 
@@ -26,7 +27,6 @@ call plug#end()
 "reload apres sav vimrc
 autocmd! bufwritepost init.vim source %
 
-" mzeofkmokmk
 "
 " Gloable key binding
 """""" REMAPER touche menu en échape """""""""
@@ -64,17 +64,16 @@ map <up> <nop>
 map <down> <nop>
 map <left> <nop>
 map <right> <nop>
-" map ù <Esc>
 imap <up> <nop>
 imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
-" imap ù <Esc>
+
 nnoremap ù <Esc> 
 vnoremap ù <Esc>gV 
 onoremap ù <Esc> 
-inoremap ù <Esc>`^ 
-
+inoremap ù <Esc>'^ 
+" nowritebackup 
 " imap  ^$ ù
 " imap  ^$ ù
 "qui  t
@@ -84,7 +83,9 @@ noremap <c-X> :quit<CR>  " Quit current window
 map <Leader>, <esc>:bprevious<CR>
 map <Leader>: <esc>:bNext<CR>
 map <Leader>! <esc>:bdelete<CR>
-map <Leader>p <esc>:CtrlPBuffer<CR>
+
+
+
 " bind Ctrl+<movement> keys to move around the windows, instead of using
 " Ctrl+w + <movement>
 " Every unnecessary keystroke that can be saved is good for your health :)
@@ -161,13 +162,14 @@ let g:gruvbox_contrast_dark="soft"
 """"parametrage completion"""""""
 "active deoplete au demarrage
 let g:deoplete#enable_at_startup = 1
-
+let g:deoplete_disable_auto_complete = 1
+let g:deoplete#auto_complete_start_length = 8
 "parametre airline tab
 
 " jedi config
 let g:jedi#usages_command = "<leader>z"
 let g:jedi#popup_on_dot = 0
-let g:jedi#popup_select_first = 0
+"let g:jedi#popup_select_first = 0
 map <Leader>b Oimport ipdb; ipdb.set_trace() # BREAKPOINT<C-c>
 
 "airline
@@ -179,7 +181,10 @@ let g:ctrlp_max_height = 30
 set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
+let g:ctrlp_map = '<F4>'
 
+
+map <F3> <esc>:CtrlPBuffer<CR>
 "Better navigating through omnicomplete option list
 set completeopt=longest,menuone
 function! OmniPopup(action)
@@ -196,4 +201,6 @@ endfunction
 inoremap <silent><C-j> <C-R>=OmniPopup('j')<CR>
 inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 
+"Configration de ALE pour la syntax"
+let g:ale_fixers = {'python': ['yapf','isort'],}
 
