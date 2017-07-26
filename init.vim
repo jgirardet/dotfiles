@@ -1,23 +1,29 @@
+""""""""""""INIT.VIM"""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""
+"
+"Config préalable pour ALE
+"sudo apt-get install flake8 yapf3
+"sudo ln -s /usr/bin/yapf3 /usr/bin/yapf
+"
 call plug#begin()
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Plug 'zchee/deoplete-jedi', {'for': ['python']}
-Plug 'davidhalter/jedi-vim'
+Plug 'davidhalter/jedi-vim'  "python completion mieux que deoplete jedi
 " Plug 'ervandew/supertab'
-Plug 'Raimondi/delimitMate'
-Plug 'https://github.com/tpope/vim-fugitive.git'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'flazz/vim-colorschemes'
-Plug 'mhartington/oceanic-next'
-Plug 'tpope/vim-commentary'
-Plug 'vim-airline/vim-airline'
-Plug 'tpope/vim-surround'
-Plug 'wellle/targets.vim'
-Plug 'rstacruz/sparkup'
-Plug 'morhetz/gruvbox'
-Plug 'w0rp/ale'
+Plug 'Raimondi/delimitMate' "ajoute "" '' () ensemble
+Plug 'https://github.com/tpope/vim-fugitive.git' "git plugin
+Plug 'ctrlpvim/ctrlp.vim' "fuzzy fie finde"
+Plug 'mhartington/oceanic-next' "color scheme"
+Plug 'tpope/vim-commentary'  "ajout instantané de commentaire"
+Plug 'vim-airline/vim-airline'   "bar dessus et dessous"
+Plug 'tpope/vim-surround'  " selctionne un texte en fonction des guiilements"
+Plug 'wellle/targets.vim' "texte selection enhancement"
+Plug 'rstacruz/sparkup' "pour les tag html"
+Plug 'morhetz/gruvbox' "theme"
+Plug 'w0rp/ale' "code verification et correction "
 " Plug 'vim-scripts/python.vim--Vasiliev'
-Plug 'tmhedberg/SimpylFold'
+"Plug 'tmhedberg/SimpylFold' "devine"
  " Plug 'vim-scripts/vim-python-virtualenv' " a tester
+Plug 'hukl/Smyck-Color-Scheme'
 call plug#end()
 
 
@@ -69,19 +75,18 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 
-nnoremap ù <Esc> 
-vnoremap ù <Esc>gV 
-onoremap ù <Esc> 
-inoremap ù <Esc>'^ 
+" nnoremap ç <Esc> 
+" vnoremap ç <Esc>gV 
+" onoremap ç <Esc> 
+" inoremap ç <Esc>""'^ 
 " nowritebackup 
-" imap  ^$ ù
-" imap  ^$ ù
+map! ç <Esc> 
 "qui  t
-noremap <c-x> :bd<CR>  " Quit current window
+
 noremap <c-X> :quit<CR>  " Quit current window
 " easier moving between buffers
-map <Leader>, <esc>:bprevious<CR>
-map <Leader>: <esc>:bNext<CR>
+map <Leader>, <esc>:bp<CR>
+map <Leader>: <esc>:bn<CR>
 map <Leader>! <esc>:bdelete<CR>
 
 
@@ -150,10 +155,7 @@ set expandtab
 
 color gruvbox
 set background=dark
-" let g:gruvbox_contrast_dark="hard"
 let g:gruvbox_contrast_dark="soft"
-
-
 
 
 
@@ -182,10 +184,11 @@ set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/coverage/*
 let g:ctrlp_map = '<F4>'
-
-
 map <F3> <esc>:CtrlPBuffer<CR>
 "Better navigating through omnicomplete option list
+
+
+
 set completeopt=longest,menuone
 function! OmniPopup(action)
     if pumvisible()
