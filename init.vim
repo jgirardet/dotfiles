@@ -25,6 +25,8 @@ call plug#end()
 """"""""""""""""""""
 "reload apres sav vimrc
 autocmd! bufwritepost init.vim source %
+
+" mzeofkmokmk
 "
 " Gloable key binding
 """""" REMAPER touche menu en échape """""""""
@@ -68,7 +70,12 @@ imap <down> <nop>
 imap <left> <nop>
 imap <right> <nop>
 " imap ù <Esc>
-map! ù <Esc> 
+nnoremap ù <Esc> 
+vnoremap ù <Esc>gV 
+onoremap ù <Esc> 
+inoremap ù <Esc>`^ 
+
+" imap  ^$ ù
 " imap  ^$ ù
 "qui  t
 noremap <c-x> :bd<CR>  " Quit current window
