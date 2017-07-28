@@ -21,13 +21,16 @@ Plug 'rstacruz/sparkup' "pour les tag html"
 Plug 'morhetz/gruvbox' "theme"
 Plug 'w0rp/ale' "code verification et correction "
 " Plug 'vim-scripts/python.vim--Vasiliev'
-"Plug 'tmhedberg/SimpylFold' "devine"
+Plug 'tmhedberg/SimpylFold' "devine"
  " Plug 'vim-scripts/vim-python-virtualenv' " a tester
-Plug 'hukl/Smyck-Color-Scheme'
+Plug 'flazz/vim-colorschemes'
+Plug 'svermeulen/vim-easyclip'
+Plug 'vim-python/python-syntax'
+Plug 'xolox/vim-easytags'
+Plug 'xolox/vim-misc'
 call plug#end()
 
-
-
+let python_highlight_all = 1
 "autocommand
 """"""""""""""""""""
 "reload apres sav vimrc
@@ -108,6 +111,13 @@ vnoremap > >gv  " better indentation
 "remplacer en collant
 :map <Leader>p ciw<C-r>0<ESC>
 
+"Ctle pour aller en fin de ligne en mode insert
+inoremap <C-e> <C-o>
+
+" mappage de mark vu vim-esayclip bloque le "m"
+" on fait dierctement mar sur k
+nnoremap M mk
+
 " Mouse and backspace
 set mouse=a  " on OSX prenbackspace ALT and click
 set bs=2     " make backspace behave like normal again
@@ -153,12 +163,11 @@ set shiftwidth=4
 set shiftround
 set expandtab
 
-color gruvbox
+syntax enable
 set background=dark
-let g:gruvbox_contrast_dark="soft"
-
-
-
+" colorscheme wombat256i
+colorscheme gruvbox
+highlight Comment cterm=bold
 
 
 """"parametrage completion"""""""
@@ -206,4 +215,22 @@ inoremap <silent><C-k> <C-R>=OmniPopup('k')<CR>
 
 "Configration de ALE pour la syntax"
 let g:ale_fixers = {'python': ['yapf','isort'],}
+
+" symplyFOld
+let g:SimpylFold_fold_import = 0
+
+"easy-clip
+let g:EasyClipUseSubstituteDefaults = 1
+
+
+"pour self coloré
+augroup PythonCustomization
+  " highlight python self, when followed by a comma, a period or a parenth
+   :autocmd FileType python syn match pythonStatement "\(\W\|^\)\@<=self\([\.,)]\)\@="
+augroup END
+
+"pour keyword hightlighté en partie, à ajouter à python.vim
+"syntax match PythonArg "\v[\(\,]\s{-}\zs\w+\ze\s{-}\=(\=)@!"
+" hi PythonArg ctermfg = 214 guifg = #ffaf00
+"
 
