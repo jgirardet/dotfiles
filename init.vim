@@ -116,6 +116,9 @@ inoremap <C-e> <C-o>
 " on fait dierctement mar sur k
 nnoremap M mk
 
+"launch pytest
+map <F5> :!pytest<CR>
+
 " Mouse and backspace
 set mouse=a  " on OSX prenbackspace ALT and click
 set bs=2     " make backspace behave like normal again
@@ -189,7 +192,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:ctrlp_max_height = 30
 set wildignore+=*.pyc
 set wildignore+=*_build/*
-set wildignore+=*/coverage/*
+set wildignore+=*/htmlcov/*
 let g:ctrlp_map = '<F4>'
 map <F3> <esc>:CtrlPBuffer<CR>
 "Better navigating through omnicomplete option list
