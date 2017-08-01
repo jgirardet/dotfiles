@@ -9,7 +9,7 @@ call plug#begin()
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'davidhalter/jedi-vim'  "python completion mieux que deoplete jedi
 " Plug 'ervandew/supertab'
-Plug 'Raimondi/delimitMate' "ajoute "" '' () ensemble
+Plug 'jiangmiao/auto-pairs'
 Plug 'https://github.com/tpope/vim-fugitive.git' "git plugin
 Plug 'ctrlpvim/ctrlp.vim' "fuzzy fie finde"
 Plug 'mhartington/oceanic-next' "color scheme"
@@ -26,8 +26,6 @@ Plug 'tmhedberg/SimpylFold' "devine"
 Plug 'flazz/vim-colorschemes'
 Plug 'svermeulen/vim-easyclip'
 Plug 'vim-python/python-syntax'
-Plug 'xolox/vim-easytags'
-Plug 'xolox/vim-misc'
 call plug#end()
 
 let python_highlight_all = 1
