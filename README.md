@@ -1,6 +1,6 @@
 ## Project Setup
 * create test_settings.py next to origninal setting file
-'''
+```
 from .settings import *
 
 DATABASES = {
@@ -11,5 +11,5 @@ DATABASES = {
 }
 
 EMAIL_BACKEND = 'django.core.mail.backends.locmem.EmailBackend'
-''' 
+```
 
