@@ -61,5 +61,17 @@ post_admin = admin.PostAdmin(models.Post, site)
 
 ```
 
-##Views testing
+##Views testing django
+
+'''
+from django.test import RequestFactory
+
+        req = RequestFactory().get ('/')
+        resp = views.HomeView.as_view()(req)
+'''
+
+##Serializers
+
+
+##Views testing drf
 
