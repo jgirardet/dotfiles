@@ -20,12 +20,13 @@ Plug 'wellle/targets.vim' "texte selection enhancement"
 Plug 'rstacruz/sparkup' "pour les tag html"
 Plug 'morhetz/gruvbox' "theme"
 Plug 'w0rp/ale' "code verification et correction "
-" Plug 'vim-scripts/python.vim--Vasiliev'
 Plug 'tmhedberg/SimpylFold' "devine"
  " Plug 'vim-scripts/vim-python-virtualenv' " a tester
 Plug 'flazz/vim-colorschemes'
-Plug 'svermeulen/vim-easyclip'
+Plug 'svermeulen/vim-easyclip' "ajoute le couper coller"
 Plug 'vim-python/python-syntax'
+Plug 'sirver/UltiSnips' "moteur de snippet"
+Plug 'honza/vim-snippets' "base de snippet"
 call plug#end()
 
 let python_highlight_all = 1
@@ -193,6 +194,7 @@ let g:ctrlp_max_height = 30
 set wildignore+=*.pyc
 set wildignore+=*_build/*
 set wildignore+=*/htmlcov/*
+set wildignore+=*/venv/*
 let g:ctrlp_map = '<F4>'
 map <F3> <esc>:CtrlPBuffer<CR>
 "Better navigating through omnicomplete option list
@@ -234,4 +236,10 @@ augroup END
 "syntax match PythonArg "\v[\(\,]\s{-}\zs\w+\ze\s{-}\=(\=)@!"
 " hi PythonArg ctermfg = 214 guifg = #ffaf00
 "
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
