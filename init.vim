@@ -20,10 +20,10 @@ Plug 'wellle/targets.vim' "texte selection enhancement"
 Plug 'rstacruz/sparkup' "pour les tag html"
 Plug 'morhetz/gruvbox' "theme"
 Plug 'w0rp/ale' "code verification et correction "
-Plug 'tmhedberg/SimpylFold' "devine"
+" Plug 'tmhedberg/SimpylFold' "devine"
  " Plug 'vim-scripts/vim-python-virtualenv' " a tester
 Plug 'flazz/vim-colorschemes'
-Plug 'svermeulen/vim-easyclip' "ajoute le couper coller"
+" Plug 'svermeulen/vim-easyclip' "ajoute le couper coller"
 Plug 'vim-python/python-syntax'
 Plug 'sirver/UltiSnips' "moteur de snippet"
 Plug 'honza/vim-snippets' "base de snippet"
