@@ -1,0 +1,6 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'python-mode/python-mode'
+Plug 'davidhalter/jedi-vim'
+
+call plug#end()

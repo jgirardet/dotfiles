@@ -1,0 +1,19 @@
+{
+	"folders":
+	[
+		{
+			"path": "."
+			
+			//"project"
+		}
+	],
+	"settings":
+	{
+		"python_interpreter": "/home/jim/.env/COMPLETE/bin/python",
+		"python_fiximports":
+		{
+			"autofix_on_save": true
+		},
+		"test_command": "/home/jim/.env/COMPLETE/bin/pytest",
+	}
+}
