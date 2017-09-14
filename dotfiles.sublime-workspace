@@ -19,8 +19,16 @@
 			"file": "sublime new project/sublime-project.json",
 			"settings":
 			{
-				"buffer_size": 151,
+				"buffer_size": 260,
 				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "sublime new project/projet.anaconda",
+			"settings":
+			{
+				"buffer_size": 55,
 				"line_ending": "Unix"
 			}
 		}
@@ -105,8 +113,9 @@
 	},
 	"expanded_folders":
 	[
-		"/home/jim/seafile/dev/dotfiles",
-		"/home/jim/seafile/dev/dotfiles/sublime new project"
+		"/home/jimmy/Seafile/dev/dotfiles",
+		"/home/jimmy/Seafile/dev/dotfiles/sublime new project",
+		"/home/jimmy/Seafile/dev/dotfiles/sublime new project/django"
 	],
 	"file_history":
 	[
@@ -153,7 +162,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -162,21 +171,51 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 151,
+						"buffer_size": 260,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								18,
-								18
+								0,
+								0
 							]
 						],
 						"settings":
 						{
+							"git_gutter_is_enabled": true,
 							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
 							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "sublime new project/projet.anaconda",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 55,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"git_gutter_is_enabled": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -249,6 +288,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"",
+				"~/Seafile/dev/lequipeur/lequipeur.sublime-project"
+			]
 		],
 		"width": 380.0
 	},

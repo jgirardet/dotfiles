@@ -1,0 +1,9 @@
+package :
+magicpython
+setting :  autoindet, past end,
+flake8 linter
+setting : line 200
+isort : on save
+yapf  : format on save
+autocomplet python  : kiet, cae insensitive
+virtualenv : $HOME/.env/
