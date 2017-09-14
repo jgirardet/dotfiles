@@ -7,3 +7,5 @@ isort : on save
 yapf  : format on save
 autocomplet python  : kiet, cae insensitive
 virtualenv : $HOME/.env/
+
+git plus
