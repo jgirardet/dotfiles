@@ -3,7 +3,6 @@
 	"ignored_packages":
 	[
 		"Jedi - Python autocompletion",
-		"Python",
 		"Vintage"
 	],
 	"on_post_save_user":
@@ -11,5 +10,6 @@
 		{
 			"command": "isort"
 		}
-	]
+	],
+	"theme": "Default.sublime-theme"
 }

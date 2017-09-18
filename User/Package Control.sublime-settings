@@ -5,13 +5,13 @@
 	],
 	"installed_packages":
 	[
+		"Anaconda",
 		"Django Manage Commands",
 		"Git",
 		"GitGutter",
 		"Hooks",
 		"isort",
 		"Jedi - Python autocompletion",
-		"MagicPython",
 		"Package Control",
 		"PyTest",
 		"PyYapf Python Formatter",
