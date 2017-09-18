@@ -1,0 +1,16 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Anaconda",
+		"Git",
+		"GitGutter",
+		"Package Control",
+		"Python Fix Imports",
+		"SideBarEnhancements",
+		"Terminal"
+	]
+}

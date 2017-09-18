@@ -2,10 +2,6 @@
 * package to install : pytest pytest-django pytest-coverage mixer
 * create test_settings.py next to origninal setting file
 ```
-import pytest
-from django.contrib.admin.sites import AdminSite
-from mixer.backend.django import mixer
-
 from .settings import *
 
 DATABASES = {
@@ -42,6 +38,8 @@ manage.py
 ## Models testing
 * call pytest, mixer and database mark protect at start of file
 ```
+from mixer.backend.django import mixer
+import pytest
 
 pytestmark = pytest.mark.django_db
 
@@ -56,6 +54,7 @@ obj = mixer.blend('app.modelname', field="giveadefaultvalue")
 ## Admin testing
 * il faut ajouter le code à chaque fonction de class :
 ```
+from django.contrib.admin.sites import AdminSite
 
 site = AdminSite()
 post_admin = admin.PostAdmin(models.Post, site)
@@ -76,15 +75,3 @@ from django.test import RequestFactory
 
 ##Views testing drf
 
-=======
-penser à creer le lien de seafile
-
-## NEOVIM
-init.vim
-
-
-## SUBLIMETEXT
-link User
-rm -rf .config/sublime-text-3/Packages/User
-ln -s ~/seafile/dev/dotfiles/User ~/.config/sublime-text-3/Packages/User
-User
