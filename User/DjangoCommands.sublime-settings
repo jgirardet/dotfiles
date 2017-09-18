@@ -1,8 +1,0 @@
-{
-	"project_override": true,
-	"python_bin": "/home/jim/.env/unolog-7lshxDZs/bin/python",
-	"python_virtualenv_paths":
-	[
-		"~/.env"
-	]
-}

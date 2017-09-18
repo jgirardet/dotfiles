@@ -1,24 +1,15 @@
 {
-	"binary_file_patterns":
-	[
-		"*.dds",
-		"*.eot",
-		"*.gif",
-		"*.ico",
-		"*.jar",
-		"*.jpeg",
-		"*.jpg",
-		"*.pdf",
-		"*.png",
-		"*.swf",
-		"*.tga",
-		"*.ttf",
-		"*.zip",
-		"__pycache__/**"
-	],
-	"font_size": 10,
+	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
 	"ignored_packages":
 	[
+		"Jedi - Python autocompletion",
+		"Python",
 		"Vintage"
+	],
+	"on_post_save_user":
+	[
+		{
+			"command": "isort"
+		}
 	]
 }

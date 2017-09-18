@@ -1,0 +1,6 @@
+{
+	"mode": "manual",
+    "save_before_test": true,
+    "show_phantoms": false,
+	"open_panel_on_failures": true,
+}

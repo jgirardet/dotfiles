@@ -25,8 +25,8 @@ Plug 'w0rp/ale' "code verification et correction "
 Plug 'flazz/vim-colorschemes'
 " Plug 'svermeulen/vim-easyclip' "ajoute le couper coller"
 Plug 'vim-python/python-syntax'
-Plug 'sirver/UltiSnips' "moteur de snippet"
-Plug 'honza/vim-snippets' "base de snippet"
+" Plug 'sirver/UltiSnips' "moteur de snippet"
+" Plug 'honza/vim-snippets' "base de snippet"
 call plug#end()
 
 let python_highlight_all = 1
