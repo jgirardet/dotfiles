@@ -6,11 +6,17 @@
 	"installed_packages":
 	[
 		"Anaconda",
+		"Django Manage Commands",
 		"Git",
 		"GitGutter",
+		"Hooks",
+		"isort",
+		"Jedi - Python autocompletion",
 		"Package Control",
-		"Python Fix Imports",
+		"PyTest",
+		"PyYapf Python Formatter",
 		"SideBarEnhancements",
-		"Terminal"
+		"SublimeLinter",
+		"SublimeLinter-flake8"
 	]
 }

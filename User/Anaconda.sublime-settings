@@ -1,33 +1,10 @@
-{
-    //Must be set in project because its per project thing
-    //"python_interpreter": "/home/jimmy/.env/lequipeur--IVPCM_Y/bin/python",
-    // "python_interpreter": "$VIRTUAL_ENV/bin/python",
-
-    //Lint and auto formating stuf
-    "auto_formatting": true,
-    "autoformat_ignore":
-    [
-        "E501" //line too long
-    ],
-    "pep8_ignore":
-    [
-        "E501"
-    ],
-    "anaconda_linter_underlines": false,
-    "anaconda_linter_mark_style": "none", // just point glutter
-    "anaconda_gutter_theme": "hard", //type de point
-
-    
-    //signature business
-    "display_signatures": false,
-    "enable_signatures_tooltip": false,
-    "enable_docstrings_tooltip": false,
-    "merge_signatures_and_doc": false,
-
-    //autocomplete args
-    "complete_parameters": true,
+ {
+	"auto_python_builder_enabled": false,
+    //"disable_anaconda_completion": true,
+    "anaconda_linting": false,
+    "auto_unload_conflictive_plugins": false,
 
 
 
-    "auto_python_builder_enabled": false,
+
 }
