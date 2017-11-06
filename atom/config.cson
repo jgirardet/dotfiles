@@ -1,0 +1,39 @@
+"*":
+  "atom-ide-ui":
+    "atom-ide-code-format":
+      formatOnSave: true
+      formatOnType: false
+  "autocomplete-modules":
+    webpack: true
+  autosave:
+    enabled: true
+  "atom-python-test":
+    onlyShowPanelOnFailure: true
+    outputColored: true
+  core:
+    disabledPackages: [
+      "terminal-plus"
+    ]
+    packagesWithKeymapsDisabled: [
+      "atom-python-test"
+    ]
+    telemetryConsent: "no"
+  editor:
+    showIndentGuide: true
+  "exception-reporting":
+    userId: "3fc11db0-2428-4b07-b8be-12ac771d2fe4"
+  "git-diff":
+    showIconsInEditorGutter: true
+  "git-plus":
+    diffs: {}
+    general: {}
+  "status-bar": {}
+  "ide-vue": {}
+  "python-isort":
+    checkOnSave: false
+    sortOnSave: true
+  "terminal-plus":
+    toggles:
+      autoClose: true
+  welcome:
+    showOnStartup: false

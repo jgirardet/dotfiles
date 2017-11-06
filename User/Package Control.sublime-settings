@@ -15,8 +15,10 @@
 		"Package Control",
 		"PyTest",
 		"PyYapf Python Formatter",
+		"Semantic UI",
 		"SideBarEnhancements",
 		"SublimeLinter",
-		"SublimeLinter-flake8"
+		"SublimeLinter-flake8",
+		"Vuejs Complete Package"
 	]
 }
