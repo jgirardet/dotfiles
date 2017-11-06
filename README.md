@@ -13,3 +13,11 @@ dev : flake8 isort ipython ipdb jedi pytest pytest-cov yap
 base : django
 dev : django-extensions werkzeug pytest-django mixer
 
+## cmder
+add .ssh/config et y mettre
+```
+Host github.com
+  IdentityFile ~/.ssh/time_rsa
+  Hostname github.com
+  ```
+  start-ssh-agent
