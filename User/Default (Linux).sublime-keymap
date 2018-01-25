@@ -1,11 +1,3 @@
 [
-	{ "keys": ["f4"], "command": "pytest_run", "args": {"target": "${file}"}},
-	{ "keys": ["f5"], "command": "pytest_run" },
-	{ "keys": ["f6"], "command": "pytest_toggle_panel" },
-	{ "keys": ["ctrl+f6"], "command": "pytest_toggle_phantoms" },
-	{"command": "indent", "keys": ["ctrl++>"],},
-	{"command": "unindent", "keys": ["ctrl+<"],},
-	{"command": "expand_selection_to_paragraph", "keys": ["super+a"],},
-	{"command": "toggle_comment", "keys": ["super+z"],}
-
+	{ "keys": ["ctrl+'"], "command": "pytest_toggle_panel" },
 ]

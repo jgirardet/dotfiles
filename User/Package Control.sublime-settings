@@ -6,19 +6,21 @@
 	"installed_packages":
 	[
 		"Anaconda",
+		"BracketHighlighter",
+		"Django",
 		"Django Manage Commands",
+		"DotENV",
+		"Emmet",
 		"Git",
 		"GitGutter",
-		"Hooks",
-		"isort",
-		"Jedi - Python autocompletion",
+		"MagicPython",
 		"Package Control",
 		"PyTest",
 		"PyYapf Python Formatter",
-		"Semantic UI",
 		"SideBarEnhancements",
 		"SublimeLinter",
 		"SublimeLinter-flake8",
-		"Vuejs Complete Package"
+		"Theme - Flatland",
+		"Theme - Soda"
 	]
 }

@@ -2,15 +2,8 @@
 	"color_scheme": "Packages/User/SublimeLinter/Monokai (SL).tmTheme",
 	"ignored_packages":
 	[
-		"isort",
-		"Jedi - Python autocompletion",
+		"SublimeLinter",
 		"Vintage"
 	],
-	"on_post_save_user":
-	[
-		{
-			"command": "isort"
-		}
-	],
-	"theme": "Default.sublime-theme"
+	"theme": "Flatland Dark.sublime-theme"
 }

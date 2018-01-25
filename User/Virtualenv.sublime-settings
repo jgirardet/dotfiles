@@ -1,5 +1,0 @@
-{
-	"virtualenv_directories": [
-        "~/.env/",  // virtualenvwrapper $WORKON_HOME
-    ],
-}

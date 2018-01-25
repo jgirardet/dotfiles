@@ -1,10 +1,7 @@
- {
-	"auto_python_builder_enabled": false,
-    //"disable_anaconda_completion": true,
-    "anaconda_linting": false,
-    "auto_unload_conflictive_plugins": false,
-
-
-
+{
+"anaconda_linting": false,
+"auto_python_builder_enabled": false,
+"complete_parameters": true,
+// fzef zef zef zef
 
 }
