@@ -1,0 +1,87 @@
+function! Cond(Cond, ...)
+  let opts = get(a:000, 0, {})
+  return a:Cond ? opts : extend(opts, { 'on': [], 'for': [] })
+endfunction
+
+call plug#begin()
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-repeat'
+
+
+call plug#end()
+
+let mapleader=" "
+" if exists('g:vscode')
+  nnoremap & <Cmd>call VSCodeNotify('workbench.action.terminal.toggleTerminal')<CR>
+  nnoremap ç <Cmd>call VSCodeNotify('workbench.action.navigateLast')<CR>
+  nnoremap ù <Cmd>call VSCodeNotify('editor.action.commentLine')<CR>
+  vmap ù <Cmd>call VSCodeNotifyVisual('editor.action.commentLine',1)<CR>
+
+  nnoremap <C-h> <Cmd>call VSCodeNotify('workbench.action.focusLeftGroup')<CR>
+  nnoremap <C-l> <Cmd>call VSCodeNotify('workbench.action.focusRightGroup')<CR>
+  " nnoremap <C-j> <Cmd>call VSCodeNotify('workbench.action.focusBellowGroup')<CR>
+  " nnoremap <C-k> <Cmd>call VSCodeNotify('workbench.action.focusAboveGroup')<CR>
+  " nnoremap <Tab> <Cmd>call VSCodeNotify('workbench.action.focusPreviousGroup')<CR>
+
+  nnoremap <leader>e <Cmd>call VSCodeNotify('workbench.files.action.focusFilesExplorer')<CR>
+  nnoremap <leader>g <Cmd>call VSCodeNotify('workbench.scm.focus')<CR>
+  nnoremap <leader>f <Cmd>call VSCodeNotify('workbench.action.findInFiles')<CR>
+  nnoremap <leader>w <Cmd>call VSCodeNotify('workbench.action.findInFiles', { 'query': expand('<cword>')})<CR>
+  " nnoremap <C-b> <Cmd>call VSCodeNotify('workbench.action.toggleSidebarVisibility')<CR>
+  nnoremap <leader>c <Cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<CR>
+  nnoremap <leader>C <Cmd>call VSCodeNotify('workbench.action.closeOtherEditors')<CR>
+
+  " Use of Alt needs vscode_neovim send in keyboard.json
+  " nnoremap <A-k> <Cmd>m '<-2<CR>gv-gv<CR>
+    " VSCode extension
+  nnoremap <A-j> <Cmd>call VSCodeNotify('editor.action.moveLinesDownAction')<CR>
+  nnoremap <A-k> <Cmd>call VSCodeNotify('editor.action.moveLinesUpAction')<CR>
+  nnoremap <C-j> <Cmd>call VSCodeNotify('rust-analyzer.moveItemDown')<CR>
+  nnoremap <C-K> <Cmd>call VSCodeNotify('rust-analyzer.moveItemUp')<CR>
+  nnoremap <leader>l <Cmd>Tabnext<CR>
+  nnoremap <leader>h <Cmd>Tabprevious<CR>
+
+nnoremap à <Cmd>call VSCodeNotify('editor.action.quickFix')<CR>
+  " vmap <A-j> <Cmd>call VSCodeCallVisual('editor.action.moveLinesDownAction',1
+
+vmap <A-j> <Esc>:call MoveVisualSelection("Down")<CR>
+vmap <A-k> <Esc>:call MoveVisualSelection("Up")<CR>
+
+
+  function! MoveVisualSelection(direction)
+     ": Summary: This calls the editor.action.moveLines and manually recalculates the new visual selection
+
+    let markStartLine = "'<"                     " Special mark for the start line of the previous visual selection
+    let markEndLine =   "'>"                     " Special mark for the end line of the previous visual selection
+    let startLine = getpos(markStartLine)[1]     " Getpos(mark) => [?, lineNum, colNumber, ?]
+    let endLine = getpos(markEndLine)[1]
+    let removeVsCodeSelectionAfterCommand = 1    " We set the visual selection manually after this command as otherwise it will use the line numbers that correspond to the old positions
+    let linecount = getbufinfo('%')[0].linecount
+     
+
+
+
+    if (a:direction == "Up" && startLine == 1) || (a:direction == "Down" && endLine == linecount) 
+        let newStart = startLine
+        let newEnd = endLine
+    else
+      call VSCodeCallRange('editor.action.moveLines'. a:direction . 'Action', startLine, endLine, removeVsCodeSelectionAfterCommand )
+      if a:direction == "Up"
+        let newStart = startLine - 1
+        let newEnd = endLine - 1
+      else 
+        let newStart = startLine + 1
+        let newEnd = endLine + 1
+      endif
+    endif
+      
+    let newVis = "normal!" . newStart . "GV". newEnd . "G"
+    ":                  │  └──────────────────── " The dot combines the strings together
+    ":                  └─────────────────────── " ! means don't respect any remaps the user has made when executing
+    execute newVis
+endfunction
+
+":        ┌───────────────────────────────────── " Exit visual mode otherwise our :call will be '<,'>call
+" else
+    " ordinary Neovim
+" endif
